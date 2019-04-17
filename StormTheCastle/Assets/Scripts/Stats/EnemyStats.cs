@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour {
+public class EnemyStats : PlayerStats {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public override void Death()
+    {
+        base.Death();
+
+        Destroy(gameObject, 2f);
+    }
 }

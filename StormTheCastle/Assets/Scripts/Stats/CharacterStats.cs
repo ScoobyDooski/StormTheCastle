@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class CharacterStats : MonoBehaviour {
 
+    [SerializeField]
+    private int value;
 
-    public int maxHealth = 100;
-    public int currentHealth { get; private set;  }
-    
-    public Stat stamina;
-    public Stat damage;
-    public bool foundChest;
+    public int GetVal()
+    {
+        return value;
+    }
     
 }

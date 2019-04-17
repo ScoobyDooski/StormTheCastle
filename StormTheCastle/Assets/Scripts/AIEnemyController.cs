@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class AIEnemyController : MonoBehaviour {
-
+    [SerializeField]
     public float senseRadius = 5f;
 
     Transform target;

@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class colliderDetector : MonoBehaviour {
+    public EnemyStats enemy;
+    public PlayerStats player;
 
     private void OnCollisionEnter(Collision col)
     {
-        Debug.Log("Entered");
+        Debug.Log(col.collider.name);
+        if(col.collider.name == "Enemy")
+        {
+            Debug.Log("User has hit the enemy");
+            enemy.TakeDamage(player.damage);
+        }
     }
     private void OnCollisionStay(Collision col)
     {
-        Debug.Log("Stay");
+        //Debug.Log("Stay");
     }
     private void OnCollisionExit(Collision col)
     {
-        Debug.Log("Exit");
+        //Debug.Log("Exit");
     }
 }
