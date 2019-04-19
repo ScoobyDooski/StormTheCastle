@@ -8,7 +8,6 @@ public class colliderDetector : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        Debug.Log(col.collider.name);
         if(col.collider.name == "Enemy")
         {
             Debug.Log("User has hit the enemy");

@@ -560,8 +560,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed412ba3529d12b4da9616243d2e52e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  player: {fileID: 0}
+  enemy: {fileID: 2061423727}
+  player: {fileID: 464456155}
+--- !u!54 &1102235733
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102235727}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1124170414
 Prefab:
   m_ObjectHideFlags: 0
@@ -1087,7 +1102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2061423725}
   - component: {fileID: 2061423723}
-  - component: {fileID: 2061423722}
   - component: {fileID: 2061423721}
   - component: {fileID: 2061423724}
   - component: {fileID: 2061423726}
@@ -1111,21 +1125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   senseRadius: 10
---- !u!54 &2061423722
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2061423720}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!195 &2061423723
 NavMeshAgent:
   m_ObjectHideFlags: 0
