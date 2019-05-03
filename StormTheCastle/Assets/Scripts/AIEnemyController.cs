@@ -9,11 +9,13 @@ public class AIEnemyController : MonoBehaviour {
 
     Transform target;
     NavMeshAgent agent;
+    EnemyCombat combat;
 
 	// Use this for initialization
 	void Start () {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        combat = GetComponent<EnemyCombat>();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +28,11 @@ public class AIEnemyController : MonoBehaviour {
 
             if (distance <= agent.stoppingDistance)
             {
-                //face and attack target
+                //face and attack target       
+                //combat.Attack();
+                //Debug.Log("ENEMY ATTACKED THE PLAYER");
+                
+               
                 FaceTarget();
             }
         }
@@ -36,6 +42,7 @@ public class AIEnemyController : MonoBehaviour {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+       
     } 
 
     void OnDrawGizmosSelected()

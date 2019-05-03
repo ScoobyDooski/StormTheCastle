@@ -17,4 +17,15 @@ public class PlayerManager : MonoBehaviour {
 
     public GameObject player;
 
-}
+
+    public void Update() {
+        if (player.transform.position.y < -5)
+        {
+            player.transform.position = new Vector3(0, 3, 14);
+        }
+
+        
+
+    }
+
+}   

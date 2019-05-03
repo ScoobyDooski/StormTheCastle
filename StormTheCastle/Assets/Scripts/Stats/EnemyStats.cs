@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : PlayerStats {
+public class EnemyStats : CharacterStats {
+
+    
 
 	public override void Death()
     {

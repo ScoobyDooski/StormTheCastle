@@ -5,12 +5,33 @@ using UnityEngine;
 [System.Serializable]
 public class CharacterStats : MonoBehaviour {
 
-    [SerializeField]
-    private int value;
+    public int maxHealth = 50;
+    public int currentHealth { get; private set; }
 
-    public int GetVal()
+    public Stat stamina;
+    public Stat damage;
+    public bool foundChests;
+
+
+    private void Awake()
     {
-        return value;
+        currentHealth = maxHealth;
     }
-    
+
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log(transform.name + " takes " + damage + " damage.");
+
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    public virtual void Death()
+    {
+        Debug.Log(transform.name + " died.");
+    }
 }

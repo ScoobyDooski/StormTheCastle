@@ -3,20 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class colliderDetector : MonoBehaviour {
-    public EnemyStats enemy;
-    public PlayerStats player;
+    public CharacterStats player;
+    public ChestTrigger chest;
+    //public Enemy enemy;
 
     private void OnCollisionEnter(Collision col)
     {
-        if(col.collider.name == "Enemy")
+        Enemy enemy = col.gameObject.GetComponent<Enemy>();
+        if(col.collider.tag == "Enemy")
         {
-            Debug.Log("User has hit the enemy");
-            enemy.TakeDamage(player.damage);
+            
+            enemy.Attacked();
+            
         }
+        
     }
     private void OnCollisionStay(Collision col)
     {
-        //Debug.Log("Stay");
+        if (col.collider.tag == "Chest")
+        {
+            if (OVRInput.GetDown(OVRInput.Button.One))
+            {
+                Debug.Log("User is pressing A");
+                chest.Selected();
+                
+                
+            }
+
+        }
     }
     private void OnCollisionExit(Collision col)
     {
