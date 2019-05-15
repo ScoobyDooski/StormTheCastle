@@ -18,3 +18,7 @@ CharacterAnimator - used for switching between movement animation, combat animat
 
 CharacterStats - holds the general stats and damage function for both player and enemies.
 
+
+
+Referenced this youtube channel multiple times for specific help, and made changes to modify for VR:
+https://www.youtube.com/user/Brackeys?pbjreload=10&disable_polymer=true
