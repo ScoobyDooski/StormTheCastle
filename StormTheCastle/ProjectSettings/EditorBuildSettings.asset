@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Menu.unity
+    guid: 5e226769f1c951a4da2bfc53d4d1a17c
+  - enabled: 1
+    path: Assets/StormTheCastle.unity
+    guid: f4cee5c39f1685d448a969bcc880da60

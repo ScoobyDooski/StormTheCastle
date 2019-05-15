@@ -10,6 +10,6 @@ public class EnemyStats : CharacterStats {
     {
         base.Death();
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject);
     }
 }

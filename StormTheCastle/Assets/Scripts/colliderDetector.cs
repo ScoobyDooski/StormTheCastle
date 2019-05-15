@@ -12,22 +12,24 @@ public class colliderDetector : MonoBehaviour {
         Enemy enemy = col.gameObject.GetComponent<Enemy>();
         if(col.collider.tag == "Enemy")
         {
-            
+            //FindObjectOfType<AudioManager>().Play("Sword1");
             enemy.Attacked();
             
         }
         
     }
     private void OnCollisionStay(Collision col)
+
     {
+        
         if (col.collider.tag == "Chest")
         {
+            ChestTrigger chest = col.gameObject.GetComponent<ChestTrigger>();
             if (OVRInput.GetDown(OVRInput.Button.One))
             {
-                Debug.Log("User is pressing A");
+                //FindObjectOfType<AudioManager>().Play("Chest");
                 chest.Selected();
-                
-                
+
             }
 
         }

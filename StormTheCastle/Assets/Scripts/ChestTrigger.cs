@@ -7,6 +7,6 @@ public class ChestTrigger : Enemy {
     public void Selected()
     {
         playerStats.foundChests = true;
-        Debug.Log("found CHEST");
+        Destroy(gameObject);
     }
 }

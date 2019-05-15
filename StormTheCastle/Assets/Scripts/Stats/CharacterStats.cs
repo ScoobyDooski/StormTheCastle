@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class CharacterStats : MonoBehaviour {
@@ -10,7 +11,10 @@ public class CharacterStats : MonoBehaviour {
 
     public Stat stamina;
     public Stat damage;
-    public bool foundChests;
+    public bool foundChests = false;
+    [Header("Health Bar")]
+    public Image healthbar;
+
 
 
     private void Awake()

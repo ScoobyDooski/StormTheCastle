@@ -10,12 +10,15 @@ public class AIEnemyController : MonoBehaviour {
     Transform target;
     NavMeshAgent agent;
     EnemyCombat combat;
+    CharacterStats playerStats;
+    
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<EnemyCombat>();
+        playerStats = GetComponent<CharacterStats>();
 	}
 	
 	// Update is called once per frame
@@ -24,17 +27,18 @@ public class AIEnemyController : MonoBehaviour {
 
         if (distance <= senseRadius)
         {
+            combat.inCombat = true;
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)
             {
-                //face and attack target       
-                //combat.Attack();
-                //Debug.Log("ENEMY ATTACKED THE PLAYER");
-                
-               
+               combat.Attack();
                 FaceTarget();
             }
+        }
+        else
+        {
+            combat.inCombat = false;
         }
 	}
     void FaceTarget()

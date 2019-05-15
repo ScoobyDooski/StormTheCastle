@@ -13,10 +13,13 @@ public class EnemySpawner : MonoBehaviour {
 
     private void Start()
     {
+
        for (int i = 0; i < spawnPoints.Length; i++)
        {
-           Transform sp = spawnPoints[i];
-           Instantiate(enemy, sp.position, sp.rotation);
+            
+            Transform sp = spawnPoints[i];
+            Instantiate(enemy, sp.position, sp.rotation);
+            
        } 
     }
 
